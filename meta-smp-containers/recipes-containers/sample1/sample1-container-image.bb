@@ -26,6 +26,7 @@ IMAGE_INSTALL_remove = " \
 "
 
 IMAGE_INSTALL_append += " \
+	base-files \
 	bash \
 	coreutils \
 	inetutils \
