@@ -303,3 +303,10 @@ INHERIT += "rm_work"
 # https://github.com/Freescale/meta-freescale/blob/master/EULA
 #
 ACCEPT_FSL_EULA = "1"
+
+# Specifies the persistence of the target's ``/var/log`` directory,
+# which is used to house postinstall target log files.
+# By default, ``VOLATILE_LOG_DIR`` is set to "yes", which means the
+# file is not persistent. You can override this setting by setting the
+# variable to "no" to make the log directory persistent.
+VOLATILE_LOG_DIR = "no"
