@@ -40,7 +40,7 @@ NotifyReady=yes
 # CPUAffinity=
 # Hostname=
 ResolvConf=copy-host
-Timezone=copy
+# Timezone=copy
 # LinkJournal=
 # SuppressSync=
 

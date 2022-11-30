@@ -33,6 +33,7 @@ IMAGE_INSTALL_append += " \
 	inetutils-ifconfig \
 	inetutils-ping \
 	inetutils-telnet \
+	initscripts \
 	iproute2 \
 	net-tools \
 	netbase \
