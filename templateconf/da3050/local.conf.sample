@@ -266,3 +266,40 @@ PACKAGECONFIG_append_pn-qemu-system-native = " sdl"
 # track the version of this file when it was generated. This can safely be ignored if
 # this doesn't mean anything to you.
 CONF_VERSION = "1"
+
+
+INIT_MANAGER = "systemd"
+VIRTUAL-RUNTIME_init_manager = "systemd"
+
+#
+# Licenses
+#
+# If set to "1", the OpenEmbedded build system copies the license manifest for the image to 
+# /usr/share/common-licenses/license.manifest within the image itself during build time.
+COPY_LIC_MANIFEST = "1"
+
+#
+# If set to "1" along with the COPY_LIC_MANIFEST variable, the OpenEmbedded build system copies into 
+# the image the license files, which are located in /usr/share/common-licenses, for each package. 
+# The license files are placed in directories within the image itself during build time.
+COPY_LIC_DIRS = "0"
+
+
+#
+# The rm_work class supports deletion of temporary workspace, which can ease your hard drive demands during builds.
+#
+# The OpenEmbedded build system can use a substantial amount of disk space during the build process. 
+# A portion of this space is the work files under the ${TMPDIR}/work directory for each recipe. 
+# Once the build system generates the packages for a recipe, the work files for that recipe are no longer needed. 
+# However, by default, the build system preserves these files for inspection and possible debugging purposes. 
+# If you would rather have these files deleted to save disk space as the build progresses, you can enable rm_work 
+# by adding the following to your local.conf file, which is found in the Build Directory.
+INHERIT += "rm_work"
+
+#
+# EULA
+#
+# This lisence is required for proprietary packages like imx-gpu-viv-1_6.4.0.p2.4-aarch64
+# https://github.com/Freescale/meta-freescale/blob/master/EULA
+#
+ACCEPT_FSL_EULA = "1"

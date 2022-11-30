@@ -1,0 +1,76 @@
+###########################################
+[Exec]
+###########################################
+
+Boot=yes
+# Ephemeral=
+# ProcessTwo=
+# Parameters=
+# Environment=
+# User=
+# WorkingDirectory=
+# PivotRoot=
+# Capability=
+# DropCapability=
+# AmbientCapability=
+# NoNewPrivileges=
+# KillSignal=
+# Personality=
+# MachineID=
+PrivateUsers=0
+NotifyReady=yes
+# SystemCallFilter=
+# LimitCPU=
+# LimitFSIZE=
+# LimitDATA=
+# LimitSTACK=
+# LimitCORE=
+# LimitRSS=
+# LimitNOFILE=
+# LimitAS=
+# LimitNPROC=
+# LimitMEMLOCK=
+# LimitLOCKS=
+# LimitSIGPENDING=
+# LimitMSGQUEUE=
+# LimitNICE=
+# LimitRTPRIO=
+# LimitRTTIME=
+# OOMScoreAdjust=
+# CPUAffinity=
+# Hostname=
+ResolvConf=copy-host
+Timezone=copy
+# LinkJournal=
+# SuppressSync=
+
+###########################################
+[Files]
+###########################################
+
+# ReadOnly=
+Volatile=overlay
+
+Bind=/var/smp/new/:/var/sample2/new/
+Bind=/var/containers/sample2/data/:/var/sample2/data/
+BindReadOnly=/etc/systemd/network:/var/sample2/network
+
+# BindUser=
+# TemporaryFileSystem=
+# Inaccessible=
+# Overlay=, OverlayReadOnly=
+# PrivateUsersOwnership=
+
+###########################################
+[Network]
+###########################################
+
+# Private=
+VirtualEthernet=no
+VirtualEthernetExtra=ve-sample2:host0
+# Interface=
+# MACVLAN=
+# IPVLAN=
+# Bridge=
+# Zone=
+# Port=

@@ -1,0 +1,12 @@
+[Match]
+Name=ve-sample2
+Driver=veth
+
+[Network]
+# Default to using a /28 prefix, giving up to 13 addresses per container.
+Address=0.0.0.0/28
+LinkLocalAddressing=no
+DHCPServer=yes
+IPMasquerade=yes
+LLDP=yes
+EmitLLDP=customer-bridge

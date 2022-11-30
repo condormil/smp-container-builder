@@ -21,4 +21,5 @@ BBLAYERS ?= " \
   ${LAYERS_ROOT_DIR}/meta-openembedded/meta-gnome \
   ${LAYERS_ROOT_DIR}/meta-freescale \
   ${LAYERS_ROOT_DIR}/meta-variscite-fslc \
+  ${LAYERS_ROOT_DIR}/meta-smp-containers \
   "
