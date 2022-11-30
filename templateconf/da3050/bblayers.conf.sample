@@ -1,0 +1,24 @@
+# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+POKY_BBLAYERS_CONF_VERSION = "2"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+LAYERS_ROOT_DIR ??= "##OEROOT##/.."
+
+BBLAYERS ?= " \
+  ##OEROOT##/meta \
+  ##OEROOT##/meta-poky \
+  ##OEROOT##/meta-yocto-bsp \
+  ${LAYERS_ROOT_DIR}/meta-openembedded/meta-filesystems \
+  ${LAYERS_ROOT_DIR}/meta-openembedded/meta-initramfs \
+  ${LAYERS_ROOT_DIR}/meta-openembedded/meta-networking \
+  ${LAYERS_ROOT_DIR}/meta-openembedded/meta-oe \
+  ${LAYERS_ROOT_DIR}/meta-openembedded/meta-perl \
+  ${LAYERS_ROOT_DIR}/meta-openembedded/meta-python \
+  ${LAYERS_ROOT_DIR}/meta-openembedded/meta-webserver \
+  ${LAYERS_ROOT_DIR}/meta-openembedded/meta-gnome \
+  ${LAYERS_ROOT_DIR}/meta-freescale \
+  ${LAYERS_ROOT_DIR}/meta-variscite-fslc \
+  "

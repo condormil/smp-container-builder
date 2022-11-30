@@ -1,0 +1,33 @@
+#!/bin/bash -e
+THIS_DIR="$(dirname $(realpath $BASH_SOURCE))"
+export BUILD_SHELL_TARGET_NAME=$1
+export BUILD_SHELL_TARGET_ROOT="$(realpath ${THIS_DIR})"
+export BUILD_SHELL_TEMPLATE_DIR="${BUILD_SHELL_TARGET_ROOT}/templateconf"
+
+if [ x"${BUILD_SHELL_TARGET_NAME}" == x"" ] || [ ! -d "${BUILD_SHELL_TEMPLATE_DIR}/${BUILD_SHELL_TARGET_NAME}" ] 
+then
+	echo "Usage: $(basename $BASH_SOURCE) <target name>"
+else
+	export BDIR="${BUILD_SHELL_TARGET_ROOT}/build/${BUILD_SHELL_TARGET_NAME}"
+	export TEMPLATECONF="${BUILD_SHELL_TEMPLATE_DIR}/${BUILD_SHELL_TARGET_NAME}"
+
+	mkdir -p "${BDIR}"
+
+	source ${BUILD_SHELL_TARGET_ROOT}/aliases
+	source ${BUILD_SHELL_TARGET_ROOT}/poky/oe-init-build-env "${BDIR}"
+
+	#
+	# site.conf.sample
+	#
+	mkdir -p $HOME/.yocto/smp/conf
+	cp -f "${BUILD_SHELL_TEMPLATE_DIR}/site.conf.sample" "$HOME/.yocto/smp/conf/"
+
+	BBPATH_APPEND="$HOME/.yocto/smp"
+	if [ "$BBPATH" != x"" ]
+	then
+		BBPATH="$BBPATH:$BBPATH_APPEND"
+	else
+		BBPATH="$BBPATH_APPEND"
+	fi
+	export BBPATH
+fi
