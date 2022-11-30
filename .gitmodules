@@ -1,0 +1,12 @@
+[submodule "meta-freescale"]
+	path = meta-freescale
+	url = https://git.yoctoproject.org/meta-freescale
+[submodule "meta-variscite-fslc"]
+	path = meta-variscite-fslc
+	url = https://github.com/varigit/meta-variscite-fslc.git
+[submodule "meta-openembedded"]
+	path = meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded
+[submodule "poky"]
+	path = poky
+	url = https://git.yoctoproject.org/git/poky
