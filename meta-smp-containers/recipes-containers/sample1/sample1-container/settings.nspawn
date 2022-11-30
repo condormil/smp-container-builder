@@ -41,7 +41,7 @@ NotifyReady=yes
 # Hostname=
 ResolvConf=copy-host
 # Timezone=copy
-# LinkJournal=
+LinkJournal=no
 # SuppressSync=
 
 ###########################################
