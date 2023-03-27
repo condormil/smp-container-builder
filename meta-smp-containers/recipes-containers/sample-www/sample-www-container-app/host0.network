@@ -1,0 +1,9 @@
+[Match]
+Virtualization=container
+Name=host0
+
+[Network]
+Address=172.31.250.2/24
+LinkLocalAddressing=no
+LLDP=yes
+EmitLLDP=customer-bridge
